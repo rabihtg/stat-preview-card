@@ -1,0 +1,122 @@
+:root {
+  /* (main background) */
+  --Very-dark-blue: hsl(233, 47%, 7%);
+  /* (card background) */
+  --Dark-desaturated-blue: hsl(244, 38%, 16%);
+  /* (accent) */
+  --Soft-violet: hsl(277, 64%, 61%);
+
+  /* (main heading, stats) */
+
+  --White: hsl(0, 0%, 100%);
+  /* (main paragraph) */
+  --p-Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  /* (stat headings) */
+  --stat-Slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+
+  /* fonts */
+  --ff-inter: "Inter", Arial, sans-serif;
+  --ff-lexend: "Lexend Deca", Verdana, sans-serif;
+
+  --fs-300: clamp(1rem, 3vw, 1.25rem);
+  --fs-500: clamp(2rem, 6vw, 2.5rem);
+}
+
+body {
+  background-color: var(--Very-dark-blue);
+}
+main {
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+.stats-card {
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: var(--Dark-desaturated-blue);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.img-cont {
+  position: relative;
+  background-color: transparent;
+}
+.img-cont img {
+  display: block;
+  filter: brightness(30%) sepia(100%) hue-rotate(-125deg) saturate(600%)
+    contrast(0.8) blur(0.5px);
+  max-width: 100%;
+  width: 100%;
+}
+.info-cont {
+  box-sizing: border-box;
+  padding: 1rem;
+}
+.title {
+  font-family: var(--ff-inter);
+  font-size: var(--fs-500);
+  color: var(--White);
+}
+.title > span {
+  color: var(--Soft-violet);
+}
+.desc {
+  color: var(--p-Slightly-transparent-white);
+  font-family: var(--ff-inter);
+  line-height: 1.5;
+  max-width: 28ch;
+  font-size: var(--fs-300);
+  margin: 0 auto;
+}
+.details {
+  box-sizing: border-box;
+  padding: 3rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.data-cont {
+  margin: 0;
+  font-family: var(--ff-inter);
+  color: var(--White);
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+.data-cont > span {
+  color: var(--stat-Slightly-transparent-white);
+  display: block;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+}
+@media (min-width: 768px) {
+  .stats-card {
+    flex-direction: row;
+  }
+  .img-cont {
+    flex-basis: 50%;
+    order: 2;
+  }
+  .img-cont img {
+    height: 100%;
+  }
+  .info-cont {
+    padding: 4rem;
+    flex-basis: 50%;
+    text-align: left;
+  }
+  .desc {
+    margin: 0;
+  }
+  .details {
+    flex-direction: row;
+  }
+}
